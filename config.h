@@ -2,13 +2,13 @@
 #define CONFIG_H
 
 // String used to delimit block outputs in the status.
-#define DELIMITER "  "
+#define DELIMITER " | "
 
 // Maximum number of Unicode characters that a block can output.
 #define MAX_BLOCK_OUTPUT_LENGTH 45
 
 // Control whether blocks are clickable.
-#define CLICKABLE_BLOCKS 1
+#define CLICKABLE_BLOCKS 0
 
 // Control whether a leading delimiter should be prepended to the status.
 #define LEADING_DELIMITER 0
@@ -17,17 +17,13 @@
 #define TRAILING_DELIMITER 0
 
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
-#define BLOCKS(X)             \
-    X("", "sb-mail", 600, 1)  \
-    X("", "sb-music", 0, 2)   \
-    X("", "sb-disk", 1800, 3) \
-    X("", "sb-memory", 10, 4) \
-    X("", "sb-swap", 10, 0)   \
-    X("", "sb-loadavg", 5, 5) \
-    X("", "sb-mic", 0, 6)     \
-    X("", "sb-record", 0, 7)  \
-    X("", "sb-volume", 0, 8)  \
-    X("", "sb-battery", 5, 9) \
-    X("", "sb-date", 1, 10)
+#define BLOCKS(X)                                              \
+    X("", "cpu_freq", 1,  0)           \
+    X("", "cpu_temp", 1,  0)           \
+    X("", "gpu",      1,  0)           \
+    X("", "memory",   2,  1)           \
+    X("", "net",      1,  2)           \
+    X("", "volume",   0,  10)          \
+    X("", "clock",    1,  0)
 
 #endif  // CONFIG_H
